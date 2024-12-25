@@ -11,8 +11,7 @@ pipeline {
     stages{
         stage('Git checkout'){
             steps{
-                git branch: 'iac-chatra', url: 'https://github.com/ManojKRISHNAPPA/career-devops-micro.git'
-            }
+                git branch: 'iac-chatra', url: 'https://github.com/ambikachatra/career-devops-micro.git'
         }
         stage('Terraform plan'){
             steps{
@@ -31,7 +30,7 @@ pipeline {
             steps{
                 script{
                     def plan = readFile 'terraform/tfplan.txt'
-                    input message:  "Do you want to proceed with terraform action.. ?"
+                    input message:  "Do you want to proceed with terraform action.. ?",
                         parameters: [
                             text{name: 'Plan',description: 'Please review the code/plan once',defaultValue: plan}
                         ]
@@ -57,4 +56,5 @@ pipeline {
             }
         }
     }
+}
 }
