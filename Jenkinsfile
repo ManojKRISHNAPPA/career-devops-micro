@@ -41,6 +41,19 @@ pipeline {
                 ''' 
             }
         }
+      satge('diskspace'){
+           steps{
+             sh '''
+echo "printing the diskspaace"
+df -kh
+
+
+'''
+}
+}
+
+
     }
 } 
+
 
