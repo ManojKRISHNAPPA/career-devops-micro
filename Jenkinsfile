@@ -41,7 +41,7 @@ pipeline {
                 ''' 
             }
         }
-      satge('diskspace'){
+      stage('diskspace'){
            steps{
              sh '''
 echo "printing the diskspaace"
