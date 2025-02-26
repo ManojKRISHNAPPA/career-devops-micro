@@ -1,1 +1,3 @@
-hello this is task1
+#!/bin/bash
+
+echo "hello this is task1"
